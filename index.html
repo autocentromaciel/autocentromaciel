@@ -10,6 +10,7 @@
       background-color: #3f3f3f;
       color: white;
     }
+
     .navbar {
       background-color: #2c2c2c;
       display: flex;
@@ -20,19 +21,23 @@
       top: 0;
       z-index: 1000;
     }
+
     .logo img {
       height: 50px;
     }
+
     .nav-links {
       display: flex;
       gap: 30px;
     }
+
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       position: relative;
     }
+
     .nav-links a::after {
       content: "";
       position: absolute;
@@ -43,41 +48,41 @@
       background: #f4c542;
       transition: width 0.3s;
     }
+
     .nav-links a:hover::after {
       width: 100%;
     }
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #2c2c2c;
+}
 
-  
-    .slider {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-    }
+.slides {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
 
-    .slides {
-      display: flex;
-      width: calc(100% * 3);
-      height: 100%;
-      transition: transform 1s ease-in-out;
-      transform: translateX(0);
-    }
-
-    .slides img {
-      width: 100%;
-      flex-shrink: 0;
-      height: 100%;
-      object-fit: cover;
-    }
+.slides img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: #2c2c2c;
+  flex: 0 0 100%;
+  display: block;
+}
 
     section {
       padding: 80px 40px;
     }
+
     #inicio {
       background-color: #3f3f3f;
       text-align: center;
       padding: 0;
     }
+
     #servicios {
       background-color: #464646;
     }
@@ -87,7 +92,7 @@
       max-width: 1000px;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     }
 
     .servicio-banner img {
@@ -168,20 +173,10 @@
         flex-direction: column;
         align-items: center;
       }
+
       .contact-map iframe {
         height: 300px;
       }
-     .slides img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: #2c2c2c;
-}
-
-@media (max-width: 768px) {
-  .contact-map iframe {
-    height: 300px;
-  }
     }
   </style>
 </head>
@@ -198,24 +193,24 @@
   </div>
 
   <section id="inicio">
-    <div class="slider">
-      <div class="slides">
-        <img src="1.png" alt="Banner 1">
-        <img src="2.png" alt="Banner 2">
-        <img src="3.png" alt="Banner 3">
-      </div>
+  <div class="slider">
+    <div class="slides">
+      <img src="1.png" alt="Banner 1" />
+      <img src="2.png" alt="Banner 2" />
+      <img src="3.png" alt="Banner 3" />
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="servicios">
     <div class="servicio-banner">
-      <img src="parking.jpg" alt="Estacionamiento">
+      <img src="parking.jpg" alt="Estacionamiento" />
     </div>
     <div class="servicio-banner">
-      <img src="lavadero.jpg" alt="Lavadero">
+      <img src="lavadero.jpg" alt="Lavadero" />
     </div>
     <div class="servicio-banner">
-      <img src="servicio.jpg" alt="Servicios">
+      <img src="servicio.jpg" alt="Servicios" />
     </div>
   </section>
 
@@ -224,19 +219,19 @@
     <div class="contact-container">
       <div class="contact-buttons">
         <a href="https://maps.google.com/?q=Guaraní+1384+Montevideo" target="_blank">
-          <img src="map.png" alt="Dirección"> Guaraní 1384
+          <img src="map.png" alt="Dirección" /> Guaraní 1384
         </a>
         <a href="tel:29158244">
-          <img src="phone.png" alt="Teléfono"> 2915 8244
+          <img src="phone.png" alt="Teléfono" /> 2915 8244
         </a>
         <a href="https://wa.me/59895107054" target="_blank">
-          <img src="WPPME.png" alt="WhatsApp"> +598 9510 7054
+          <img src="WPPME.png" alt="WhatsApp" /> +598 9510 7054
         </a>
         <a href="mailto:autocentromaciel@gmail.com">
-          <img src="mail.png" alt="Correo"> autocentromaciel@gmail.com
+          <img src="mail.png" alt="Correo" /> autocentromaciel@gmail.com
         </a>
         <a href="https://www.instagram.com/autocentromaciel" target="_blank">
-          <img src="IGME.png" alt="Instagram"> @autocentromaciel
+          <img src="IGME.png" alt="Instagram" /> @autocentromaciel
         </a>
       </div>
       <div class="contact-map">
@@ -265,7 +260,3 @@
   </script>
 </body>
 </html>
-
-
-
-
