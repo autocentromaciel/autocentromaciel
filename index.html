@@ -186,7 +186,6 @@
       display: block;
     }
 
-    /* Indicadores sliders servicios */
     .slider-indicators-servicio {
       position: absolute;
       bottom: 10px;
@@ -309,7 +308,7 @@
     </div>
   </div>
 
-  <!-- SLIDER PRINCIPAL -->
+
   <section id="inicio">
     <div class="slider">
       <div class="slides">
@@ -321,9 +320,9 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  
   <section id="servicios">
-    <!-- PARKING -->
+
     <div class="servicio-banner">
       <h3 class="servicio-titulo">Parking</h3>
       <div class="servicio-row">
@@ -341,7 +340,6 @@
       </div>
     </div>
 
-    <!-- LAVADERO -->
     <div class="servicio-banner">
       <h3 class="servicio-titulo">Lavadero</h3>
       <div class="servicio-row">
@@ -378,7 +376,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contacto">
     <h2 style="text-align:center">Contacto</h2>
     <div class="contact-container">
@@ -412,13 +409,11 @@
   <footer>© Autocentro Maciel. Todos los derechos reservados.</footer>
 
   <script>
-    /* ===== SLIDER PRINCIPAL ===== */
     const slides = document.querySelector('.slides');
     const totalSlides = slides.children.length;
     const mainIndicators = document.getElementById('main-indicators');
     let index = 0;
-
-    // Crear indicadores principales
+    
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('span');
       if (i === 0) dot.classList.add('active');
@@ -436,14 +431,12 @@
 
     setInterval(showNextSlide, 6000);
 
-    /* ===== SLIDERS DE SERVICIOS ===== */
     document.querySelectorAll('.slider-servicio').forEach(slider => {
       const track = slider.querySelector('.slides-servicio');
       const total = track.children.length;
       const indicators = slider.querySelector('.slider-indicators-servicio');
       let i = 0;
 
-      // Crear indicadores por slider de servicios
       for (let j = 0; j < total; j++) {
         const dot = document.createElement('span');
         if (j === 0) dot.classList.add('active');
@@ -462,3 +455,4 @@
   </script>
 </body>
 </html>
+
