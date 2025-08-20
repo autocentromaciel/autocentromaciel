@@ -308,7 +308,6 @@
     </div>
   </div>
 
-
   <section id="inicio">
     <div class="slider">
       <div class="slides">
@@ -320,9 +319,7 @@
     </div>
   </section>
 
-  
   <section id="servicios">
-
     <div class="servicio-banner">
       <h3 class="servicio-titulo">Parking</h3>
       <div class="servicio-row">
@@ -357,7 +354,6 @@
       </div>
     </div>
 
-    <!-- DETAILING -->
     <div class="servicio-banner">
       <h3 class="servicio-titulo">Detailing</h3>
       <div class="servicio-row">
@@ -408,12 +404,14 @@
 
   <footer>© Autocentro Maciel. Todos los derechos reservados.</footer>
 
+  <!-- ========== JAVASCRIPT ACTUALIZADO ========== -->
   <script>
     const slides = document.querySelector('.slides');
     const totalSlides = slides.children.length;
     const mainIndicators = document.getElementById('main-indicators');
     let index = 0;
-    
+
+    // Crear los puntos para el slider principal
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('span');
       if (i === 0) dot.classList.add('active');
@@ -422,21 +420,34 @@
 
     const mainDots = mainIndicators.querySelectorAll('span');
 
-    function showNextSlide() {
-      index = (index + 1) % totalSlides;
+    function goToSlide(n) {
+      index = n;
       slides.style.transform = `translateX(-${index * 100}%)`;
       mainDots.forEach(dot => dot.classList.remove('active'));
       mainDots[index].classList.add('active');
     }
 
+    function showNextSlide() {
+      goToSlide((index + 1) % totalSlides);
+    }
+
+    // Ir a la imagen tocando los puntos del slider principal
+    mainDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+      });
+    });
+
     setInterval(showNextSlide, 6000);
 
+    // ===== SLIDERS DE SERVICIOS =====
     document.querySelectorAll('.slider-servicio').forEach(slider => {
       const track = slider.querySelector('.slides-servicio');
       const total = track.children.length;
       const indicators = slider.querySelector('.slider-indicators-servicio');
       let i = 0;
 
+      // Crear puntos para cada slider de servicio
       for (let j = 0; j < total; j++) {
         const dot = document.createElement('span');
         if (j === 0) dot.classList.add('active');
@@ -445,14 +456,26 @@
 
       const dots = indicators.querySelectorAll('span');
 
-      setInterval(() => {
-        i = (i + 1) % total;
+      function goToServiceSlide(n) {
+        i = n;
         track.style.transform = `translateX(-${i * 100}%)`;
         dots.forEach(dot => dot.classList.remove('active'));
         dots[i].classList.add('active');
-      }, 5000);
+      }
+
+      function showNextServiceSlide() {
+        goToServiceSlide((i + 1) % total);
+      }
+
+      // Ir a la imagen tocando los puntos de cada slider
+      dots.forEach((dot, j) => {
+        dot.addEventListener('click', () => {
+          goToServiceSlide(j);
+        });
+      });
+
+      setInterval(showNextServiceSlide, 5000);
     });
   </script>
 </body>
 </html>
-
