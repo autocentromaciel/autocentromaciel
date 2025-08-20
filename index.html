@@ -52,26 +52,27 @@
     .nav-links a:hover::after {
       width: 100%;
     }
-.slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background-color: #2c2c2c;
-}
 
-.slides {
-  display: flex;
-  transition: transform 1s ease-in-out;
-}
+    .slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background-color: #2c2c2c;
+    }
 
-.slides img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  background-color: #2c2c2c;
-  flex: 0 0 100%;
-  display: block;
-}
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background-color: #2c2c2c;
+      flex: 0 0 100%;
+      display: block;
+    }
 
     section {
       padding: 80px 40px;
@@ -81,6 +82,7 @@
       background-color: #3f3f3f;
       text-align: center;
       padding: 0;
+      scroll-margin-top: 80px; 
     }
 
     #servicios {
@@ -88,18 +90,75 @@
     }
 
     .servicio-banner {
-      margin: 20px auto;
+      position: relative;
+      margin: 25px auto;
       max-width: 1000px;
-      border-radius: 10px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 15px rgba(0,0,0,0.45);
+      background: #2c2c2c;
+      padding: 16px 16px 18px; 
     }
 
-    .servicio-banner img {
+    .servicio-titulo {
+      position: absolute;
+      top: 10px;
+      left: 18px;
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
+    .servicio-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      gap: 18px;
+      align-items: stretch;
+      min-height: 300px; 
+      margin-top: 28px;  
+    }
+
+    .slider-servicio {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+      height: 100%;
+      background: #222;
+      cursor: pointer;
+    }
+
+    .slides-servicio {
+      display: flex;
+      height: 100%;
+      transition: transform 0.9s ease-in-out;
+    }
+
+    .slides-servicio img {
+      flex: 0 0 100%;
       width: 100%;
-      display: block;
+      height: 100%;
       object-fit: cover;
-      height: 250px;
+      display: block;
+    }
+
+    .servicio-imagen {
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+      background: #222;
+      cursor: pointer;
+    }
+
+    .servicio-imagen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     #contacto {
@@ -177,13 +236,21 @@
       .contact-map iframe {
         height: 300px;
       }
+
+      .servicio-row {
+        grid-template-columns: 1fr;
+        min-height: 240px;
+      }
+      .slider-servicio, .servicio-imagen {
+        height: 220px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="navbar">
     <div class="logo">
-      <img src="logo.jpg" alt="Logo Autocentro Maciel" />
+      <img src="misc/logo.jpg" alt="Logo Autocentro Maciel" />
     </div>
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
@@ -193,24 +260,62 @@
   </div>
 
   <section id="inicio">
-  <div class="slider">
-    <div class="slides">
-      <img src="1.png" alt="Banner 1" />
-      <img src="2.png" alt="Banner 2" />
-      <img src="3.png" alt="Banner 3" />
+    <div class="slider">
+      <div class="slides">
+        <img src="misc/1.png" alt="Banner 1" />
+        <img src="misc/2.png" alt="Banner 2" />
+        <img src="misc/3.png" alt="Banner 3" />
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="servicios">
     <div class="servicio-banner">
-      <img src="parking.jpg" alt="Estacionamiento" />
+      <h3 class="servicio-titulo">Parking</h3>
+      <div class="servicio-row">
+        <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="parking">
+          <div class="slides-servicio">
+            <img src="misc/parking1.jpg" alt="Parking 1" />
+            <img src="misc/parking2.jpg" alt="Parking 2" />
+            <img src="misc/parking3.jpg" alt="Parking 3" />
+          </div>
+        </a>
+        <a href="https://wa.me/c/59895107054" target="_blank" class="servicio-imagen">
+          <img src="misc/parking.jpg" alt="Imagen Parking" />
+        </a>
+      </div>
     </div>
+
     <div class="servicio-banner">
-      <img src="lavadero.jpg" alt="Lavadero" />
+      <h3 class="servicio-titulo">Lavadero</h3>
+      <div class="servicio-row">
+        <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="lavadero">
+          <div class="slides-servicio">
+            <img src="misc/lavadero1.jpg" alt="Lavadero 1" />
+            <img src="misc/lavadero2.jpg" alt="Lavadero 2" />
+            <img src="misc/lavadero3.jpg" alt="Lavadero 3" />
+          </div>
+        </a>
+        <a href="https://wa.me/c/59895107054" target="_blank" class="servicio-imagen">
+          <img src="misc/lavadero.jpg" alt="Imagen Lavadero" />
+        </a>
+      </div>
     </div>
+
     <div class="servicio-banner">
-      <img src="servicio.jpg" alt="Servicios" />
+      <h3 class="servicio-titulo">Detailing</h3>
+      <div class="servicio-row">
+        <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="detailing">
+          <div class="slides-servicio">
+            <img src="misc/detailing1.jpg" alt="Detailing 1" />
+            <img src="misc/detailing2.jpg" alt="Detailing 2" />
+            <img src="misc/detailing3.jpg" alt="Detailing 3" />
+          </div>
+        </a>
+        <a href="https://wa.me/c/59895107054" target="_blank" class="servicio-imagen">
+          <img src="misc/servicio.jpg" alt="Imagen Detailing" />
+        </a>
+      </div>
     </div>
   </section>
 
@@ -219,19 +324,19 @@
     <div class="contact-container">
       <div class="contact-buttons">
         <a href="https://maps.google.com/?q=Guaraní+1384+Montevideo" target="_blank">
-          <img src="map.png" alt="Dirección" /> Guaraní 1384
+          <img src="misc/map.png" alt="Dirección" /> Guaraní 1384
         </a>
         <a href="tel:29158244">
-          <img src="phone.png" alt="Teléfono" /> 2915 8244
+          <img src="misc/phone.png" alt="Teléfono" /> 2915 8244
         </a>
         <a href="https://wa.me/59895107054" target="_blank">
-          <img src="WPPME.png" alt="WhatsApp" /> +598 9510 7054
+          <img src="misc/WPPME.png" alt="WhatsApp" /> +598 9510 7054
         </a>
         <a href="mailto:autocentromaciel@gmail.com">
-          <img src="mail.png" alt="Correo" /> autocentromaciel@gmail.com
+          <img src="misc/mail.png" alt="Correo" /> autocentromaciel@gmail.com
         </a>
         <a href="https://www.instagram.com/autocentromaciel" target="_blank">
-          <img src="IGME.png" alt="Instagram" /> @autocentromaciel
+          <img src="misc/IGME.png" alt="Instagram" /> @autocentromaciel
         </a>
       </div>
       <div class="contact-map">
@@ -250,13 +355,21 @@
     const slides = document.querySelector('.slides');
     const totalSlides = slides.children.length;
     let index = 0;
-
     function showNextSlide() {
       index = (index + 1) % totalSlides;
       slides.style.transform = `translateX(-${index * 100}%)`;
     }
-
     setInterval(showNextSlide, 6000);
+
+    document.querySelectorAll('.slider-servicio').forEach(slider => {
+      const track = slider.querySelector('.slides-servicio');
+      const total = track.children.length;
+      let i = 0;
+      setInterval(() => {
+        i = (i + 1) % total;
+        track.style.transform = `translateX(-${i * 100}%)`;
+      }, 5000);
+    });
   </script>
 </body>
 </html>
