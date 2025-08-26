@@ -378,24 +378,34 @@
   <footer>© Autocentro Maciel. Todos los derechos reservados.</footer>
 
   <script>
-    const slides = document.querySelector('.slides');
-    const totalSlides = slides.children.length;
-    let index = 0;
-    function showNextSlide() {
-      index = (index + 1) % totalSlides;
-      slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-    setInterval(showNextSlide, 6000);
+  const slides = document.querySelector('.slides');
+  const totalSlides = slides.children.length;
+  let index = 0;
+  function showNextSlide() {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+  setInterval(showNextSlide, 6000);
 
-    document.querySelectorAll('.slider-servicio').forEach(slider => {
-      const track = slider.querySelector('.slides-servicio');
-      const total = track.children.length;
-      let i = 0;
-      setInterval(() => {
-        i = (i + 1) % total;
-        track.style.transform = `translateX(-${i * 100}%)`;
-      }, 5000);
-    });
-  </script>
+  document.querySelectorAll('.slider-servicio').forEach(slider => {
+    const track = slider.querySelector('.slides-servicio');
+    const total = track.children.length;
+    let i = 0;
+
+    let intervalTime = 5000;
+    if(slider.dataset.slider === 'parking') {
+      intervalTime = 7000;
+    }
+
+    const advanceSlide = () => {
+      i = (i + 1) % total;
+      track.style.transform = `translateX(-${i * 100}%)`;
+    };
+
+    advanceSlide();
+    setInterval(advanceSlide, intervalTime);
+  });
+</script>
 </body>
 </html>
+
