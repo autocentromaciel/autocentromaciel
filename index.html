@@ -74,29 +74,6 @@
       display: block;
     }
 
-    .slider-indicators {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-    }
-
-    .slider-indicators span {
-      width: 10px;
-      height: 10px;
-      background-color: #bbb;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .slider-indicators span.active {
-      background-color: #f4c542;
-      transform: scale(1.2);
-    }
-
     section {
       padding: 80px 40px;
     }
@@ -158,25 +135,29 @@
       display: flex;
       height: 100%;
       transition: transform 0.9s ease-in-out;
-      justify-content: center;
-      align-items: center;
     }
 
-    .slides-servicio img {
+    /* Parking y Detailing */
+    .slider-servicio[data-slider="parking"] img,
+    .slider-servicio[data-slider="detailing"] img {
       flex: 0 0 100%;
-      width: 50%;
-      height: 50%;
-      object-fit: contain;
-      display: block;
-      margin: auto;
-    }
-
-    .slider-servicio[data-slider="lavadero"] .slides-servicio img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      margin: 0;
+      display: block;
+    }
+
+    /* Lavadero */
+    .slider-servicio[data-slider="lavadero"] {
+      height: 350px;
+    }
+
+    .slider-servicio[data-slider="lavadero"] img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .servicio-imagen {
@@ -193,30 +174,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    .slider-indicators-servicio {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 6px;
-      z-index: 3;
-    }
-
-    .slider-indicators-servicio span {
-      width: 8px;
-      height: 8px;
-      background-color: #bbb;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .slider-indicators-servicio span.active {
-      background-color: #f4c542;
-      transform: scale(1.3);
     }
 
     #contacto {
@@ -299,8 +256,13 @@
         grid-template-columns: 1fr;
         min-height: 240px;
       }
+
       .slider-servicio, .servicio-imagen {
         height: 220px;
+      }
+
+      .slider-servicio[data-slider="lavadero"] {
+        height: 350px;
       }
     }
   </style>
@@ -308,7 +270,7 @@
 <body>
   <div class="navbar">
     <div class="logo">
-      <img src="logo.jpg" alt="Logo Autocentro Maciel" />
+      <img src="misc/logo.jpg" alt="Logo Autocentro Maciel" />
     </div>
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
@@ -320,49 +282,48 @@
   <section id="inicio">
     <div class="slider">
       <div class="slides">
-        <img src="1.png" alt="Banner 1" />
-        <img src="2.png" alt="Banner 2" />
-        <img src="3.png" alt="Banner 3" />
+        <img src="misc/1.png" alt="Banner 1" />
+        <img src="misc/2.png" alt="Banner 2" />
+        <img src="misc/3.png" alt="Banner 3" />
       </div>
-      <div class="slider-indicators" id="main-indicators"></div>
     </div>
   </section>
 
   <section id="servicios">
     <div class="servicio-banner">
-      <h3 class="servicio-titulo">Parking</h3>
-      <div class="servicio-row">
-        <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="parking">
-          <div class="slides-servicio">
-            <img src="parking1.jpg" alt="Parking 1" />
-            <img src="parking2.jpeg" alt="Parking 2" />
-            <img src="parking3.jpeg" alt="Parking 3" />
-          </div>
-          <div class="slider-indicators-servicio"></div>
-        </a>
-        <a href="https://wa.me/c/59895107054" target="_blank" class="servicio-imagen">
-          <img src="parking.jpg" alt="Imagen Parking" />
+    <h3 class="servicio-titulo">Parking</h3>
+    <div class="servicio-row">
+      <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="parking">
+        <div class="slides-servicio">
+          <img src="parking1.jpg" alt="Parking 1" />
+          <img src="parking2.jpeg" alt="Parking 2" />
+          <img src="parking3.jpeg" alt="Parking 3" />
+        </div>
+        <div class="slider-indicators-servicio"></div>
+      </a>
+      <a href="https://wa.me/c/59895107054" target="_blank" class="servicio-imagen">
+        <img src="parking.jpg" alt="Imagen Parking" />
         </a>
       </div>
     </div>
 
     <div class="servicio-banner">
-      <h3 class="servicio-titulo">Lavadero</h3>
-      <div class="servicio-row">
-        <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="lavadero">
-          <div class="slides-servicio">
-            <img src="lavadero1.jpg" alt="Lavadero 1" />
-            <img src="lavadero2.jpeg" alt="Lavadero 2" />
-            <img src="lavadero3.jpeg" alt="Lavadero 3" />
-            <img src="lavadero4.jpeg" alt="Lavadero 4" />
-            <img src="lavadero5.jpeg" alt="Lavadero 5" />
-            <img src="lavadero6.jpeg" alt="Lavadero 6" />
-            <img src="lavadero7.jpeg" alt="Lavadero 7" />
-          </div>
-          <div class="slider-indicators-servicio"></div>
-        </a>
+    <h3 class="servicio-titulo">Lavadero</h3>
+    <div class="servicio-row">
+      <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="lavadero">
+        <div class="slides-servicio">
+          <img src="lavadero1.jpg" alt="Lavadero 1" />
+          <img src="lavadero2.jpeg" alt="Lavadero 2" />
+          <img src="lavadero3.jpeg" alt="Lavadero 3" />
+          <img src="lavadero4.jpeg" alt="Lavadero 4" />
+          <img src="lavadero5.jpeg" alt="Lavadero 5" />
+          <img src="lavadero6.jpeg" alt="Lavadero 6" />
+          <img src="lavadero7.jpeg" alt="Lavadero 7" />
+        </div>
+        <div class="slider-indicators-servicio"></div>
+      </a>
         <a href="https://wa.me/c/59895107054" target="_blank" class="servicio-imagen">
-          <img src="lavadero.jpg" alt="Imagen Lavadero" />
+          <img src="misc/lavadero.jpg" alt="Imagen Lavadero" />
         </a>
       </div>
     </div>
@@ -372,14 +333,13 @@
       <div class="servicio-row">
         <a href="https://wa.me/c/59895107054" target="_blank" class="slider-servicio" data-slider="detailing">
           <div class="slides-servicio">
-            <img src="detailing1.jpg" alt="Detailing 1" />
-            <img src="detailing2.jpg" alt="Detailing 2" />
-            <img src="detailing3.jpg" alt="Detailing 3" />
+            <img src="misc/detailing1.jpg" alt="Detailing 1" />
+            <img src="misc/detailing2.jpg" alt="Detailing 2" />
+            <img src="misc/detailing3.jpg" alt="Detailing 3" />
           </div>
-          <div class="slider-indicators-servicio"></div>
         </a>
         <a href="https://wa.me/c/59895107054" target="_blank" class="servicio-imagen">
-          <img src="servicio.jpg" alt="Imagen Detailing" />
+          <img src="misc/servicio.jpg" alt="Imagen Detailing" />
         </a>
       </div>
     </div>
@@ -390,19 +350,19 @@
     <div class="contact-container">
       <div class="contact-buttons">
         <a href="https://maps.google.com/?q=Guaraní+1384+Montevideo" target="_blank">
-          <img src="map.png" alt="Dirección" /> Guaraní 1384
+          <img src="misc/map.png" alt="Dirección" /> Guaraní 1384
         </a>
         <a href="tel:29158244">
-          <img src="phone.png" alt="Teléfono" /> 2915 8244
+          <img src="misc/phone.png" alt="Teléfono" /> 2915 8244
         </a>
         <a href="https://wa.me/59895107054" target="_blank">
-          <img src="WPPME.png" alt="WhatsApp" /> +598 9510 7054
+          <img src="misc/WPPME.png" alt="WhatsApp" /> +598 9510 7054
         </a>
         <a href="mailto:autocentromaciel@gmail.com">
-          <img src="mail.png" alt="Correo" /> autocentromaciel@gmail.com
+          <img src="misc/mail.png" alt="Correo" /> autocentromaciel@gmail.com
         </a>
         <a href="https://www.instagram.com/autocentromaciel" target="_blank">
-          <img src="IGME.png" alt="Instagram" /> @autocentromaciel
+          <img src="misc/IGME.png" alt="Instagram" /> @autocentromaciel
         </a>
       </div>
       <div class="contact-map">
@@ -420,69 +380,22 @@
   <script>
     const slides = document.querySelector('.slides');
     const totalSlides = slides.children.length;
-    const mainIndicators = document.getElementById('main-indicators');
     let index = 0;
-
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('span');
-      if (i === 0) dot.classList.add('active');
-      mainIndicators.appendChild(dot);
-    }
-
-    const mainDots = mainIndicators.querySelectorAll('span');
-
-    function goToSlide(n) {
-      index = n;
-      slides.style.transform = `translateX(-${index * 100}%)`;
-      mainDots.forEach(dot => dot.classList.remove('active'));
-      mainDots[index].classList.add('active');
-    }
-
     function showNextSlide() {
-      goToSlide((index + 1) % totalSlides);
+      index = (index + 1) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
     }
-
-    mainDots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        goToSlide(i);
-      });
-    });
-
     setInterval(showNextSlide, 6000);
 
     document.querySelectorAll('.slider-servicio').forEach(slider => {
       const track = slider.querySelector('.slides-servicio');
       const total = track.children.length;
-      const indicators = slider.querySelector('.slider-indicators-servicio');
       let i = 0;
-      
-      for (let j = 0; j < total; j++) {
-        const dot = document.createElement('span');
-        if (j === 0) dot.classList.add('active');
-        indicators.appendChild(dot);
-      }
-
-      const dots = indicators.querySelectorAll('span');
-
-      function goToServiceSlide(n) {
-        i = n;
+      setInterval(() => {
+        i = (i + 1) % total;
         track.style.transform = `translateX(-${i * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[i].classList.add('active');
-      }
-
-      function showNextServiceSlide() {
-        goToServiceSlide((i + 1) % total);
-      }
-      dots.forEach((dot, j) => {
-        dot.addEventListener('click', () => {
-          goToServiceSlide(j);
-        });
-      });
-
-      setInterval(showNextServiceSlide, 5000);
+      }, 5000);
     });
   </script>
 </body>
 </html>
-//*1229*//
