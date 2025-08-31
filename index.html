@@ -137,8 +137,7 @@
       transition: transform 0.9s ease-in-out;
     }
 
-    .slider-servicio[data-slider="parking"] img,
-    .slider-servicio[data-slider="detailing"] img {
+    .slider-servicio[data-slider="parking"] img {
       flex: 0 0 100%;
       width: 100%;
       height: 100%;
@@ -146,11 +145,13 @@
       display: block;
     }
     
-    .slider-servicio[data-slider="lavadero"] {
+    .slider-servicio[data-slider="lavadero"],
+    .slider-servicio[data-slider="detailing"] {
       height: 350px;
     }
 
-    .slider-servicio[data-slider="lavadero"] img {
+    .slider-servicio[data-slider="lavadero"] img,
+    .slider-servicio[data-slider="detailing"] img {
       flex: 0 0 100%;
       width: 100%;
       height: 100%;
@@ -259,7 +260,8 @@
         height: 220px;
       }
 
-      .slider-servicio[data-slider="lavadero"] {
+      .slider-servicio[data-slider="lavadero"],
+      .slider-servicio[data-slider="detailing"] {
         height: 350px;
       }
     }
@@ -411,5 +413,3 @@
 </html>
 
 <!--1229-->
-
-
