@@ -341,9 +341,9 @@
   <section id="inicio">
     <div class="slider">
       <div class="slides">
-        <img src="1.png" alt="Banner 1" />
-        <img src="2.png" alt="Banner 2" />
-        <img src="3.png" alt="Banner 3" />
+        <img src="1.png" alt="Banner 1" class="lightbox-trigger" />
+        <img src="2.png" alt="Banner 2" class="lightbox-trigger" />
+        <img src="3.png" alt="Banner 3" class="lightbox-trigger" />
       </div>
     </div>
   </section>
@@ -351,13 +351,11 @@
   <section id="promociones">
     <h2>Promociones</h2>
     <div class="promo-grid">
-      <img src="promo1.jpg" alt="Promo 1" />
-      <img src="promo2.jpg" alt="Promo 2" />
-      <img src="promo3.jpg" alt="Promo 3" />
-      <img src="promo4.jpg" alt="Promo 4" />
-      <img src="promo5.jpg" alt="Promo 4" />
-      <img src="promo6.jpg" alt="Promo 4" />
-      <img src="promo7.jpg" alt="Promo 4" />
+      <img src="promo1.jpg" alt="Promo 1" class="lightbox-trigger" />
+      <img src="promo2.jpg" alt="Promo 2" class="lightbox-trigger" />
+      <img src="promo3.jpg" alt="Promo 3" class="lightbox-trigger" />
+      <img src="promo4.jpg" alt="Promo 4" class="lightbox-trigger" />
+      <img src="promo5.jpg" alt="Promo 5" class="lightbox-trigger" />
     </div>
   </section>
 
@@ -367,14 +365,14 @@
     <div class="servicio-row">
       <div class="slider-servicio" data-slider="parking">
         <div class="slides-servicio">
-          <img src="parking1.jpg" alt="Parking 1" />
-          <img src="parking2.jpeg" alt="Parking 2" />
-          <img src="parking3.jpeg" alt="Parking 3" />
+          <img src="parking1.jpg" alt="Parking 1" class="lightbox-trigger" />
+          <img src="parking2.jpeg" alt="Parking 2" class="lightbox-trigger" />
+          <img src="parking3.jpeg" alt="Parking 3" class="lightbox-trigger" />
         </div>
         <div class="slider-indicators-servicio"></div>
       </div>
       <div class="servicio-imagen">
-        <img src="parking.jpg" alt="Imagen Parking" />
+        <img src="parking.jpg" alt="Imagen Parking" class="lightbox-trigger" />
         </div>
       </div>
     </div>
@@ -384,18 +382,18 @@
     <div class="servicio-row">
       <div class="slider-servicio" data-slider="lavadero">
         <div class="slides-servicio">
-          <img src="lavadero1.jpg" alt="Lavadero 1" />
-          <img src="lavadero2.jpeg" alt="Lavadero 2" />
-          <img src="lavadero3.jpeg" alt="Lavadero 3" />
-          <img src="lavadero4.jpeg" alt="Lavadero 4" />
-          <img src="lavadero5.jpeg" alt="Lavadero 5" />
-          <img src="lavadero6.jpeg" alt="Lavadero 6" />
-          <img src="lavadero7.jpeg" alt="Lavadero 7" />
+          <img src="lavadero1.jpg" alt="Lavadero 1" class="lightbox-trigger" />
+          <img src="lavadero2.jpeg" alt="Lavadero 2" class="lightbox-trigger" />
+          <img src="lavadero3.jpeg" alt="Lavadero 3" class="lightbox-trigger" />
+          <img src="lavadero4.jpeg" alt="Lavadero 4" class="lightbox-trigger" />
+          <img src="lavadero5.jpeg" alt="Lavadero 5" class="lightbox-trigger" />
+          <img src="lavadero6.jpeg" alt="Lavadero 6" class="lightbox-trigger" />
+          <img src="lavadero7.jpeg" alt="Lavadero 7" class="lightbox-trigger" />
         </div>
         <div class="slider-indicators-servicio"></div>
       </div>
         <div class="servicio-imagen">
-          <img src="lavadero.jpg" alt="Imagen Lavadero" />
+          <img src="lavadero.jpg" alt="Imagen Lavadero" class="lightbox-trigger" />
         </div>
       </div>
     </div>
@@ -405,16 +403,16 @@
       <div class="servicio-row">
         <div class="slider-servicio" data-slider="detailing">
           <div class="slides-servicio">
-            <img src="detailing1.jpg" alt="Detailing 1" />
-            <img src="detailing2.jpg" alt="Detailing 2" />
-            <img src="detailing3.jpg" alt="Detailing 3" />
-            <img src="detailing4.jpg" alt="Detailing 4" />
-            <img src="detailing5.jpg" alt="Detailing 5" />
-            <img src="detailing6.jpg" alt="Detailing 6" />
+            <img src="detailing1.jpg" alt="Detailing 1" class="lightbox-trigger" />
+            <img src="detailing2.jpg" alt="Detailing 2" class="lightbox-trigger" />
+            <img src="detailing3.jpg" alt="Detailing 3" class="lightbox-trigger" />
+            <img src="detailing4.jpg" alt="Detailing 4" class="lightbox-trigger" />
+            <img src="detailing5.jpg" alt="Detailing 5" class="lightbox-trigger" />
+            <img src="detailing6.jpg" alt="Detailing 6" class="lightbox-trigger" />
           </div>
         </div>
         <div class="servicio-imagen">
-          <img src="servicio.jpg" alt="Imagen Detailing" />
+          <img src="servicio.jpg" alt="Imagen Detailing" class="lightbox-trigger" />
         </div>
       </div>
     </div>
@@ -450,7 +448,7 @@
     </div>
   </section>
 
-  <footer>© Autocentro Maciel. Todos los derechos reservados. | Creado por Dante Gomez</footer>
+  <footer>© Autocentro Maciel. Todos los derechos reservados.</footer>
 
   <div class="lightbox" id="lightbox">
     <img src="" alt="Ampliada" id="lightbox-img">
@@ -487,7 +485,7 @@
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
-  document.querySelectorAll('img').forEach(img => {
+  document.querySelectorAll('.lightbox-trigger').forEach(img => {
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
       lightbox.classList.add('active');
@@ -503,4 +501,13 @@
   </script>
 </body>
 </html>
+<!-- 
 
+██████╗ ███╗  ██╗████████╗
+██╔══██╗████╗░██║╚══██╔══╝
+██║░░██║██╔██╗██║░░░██║░░░
+██║░░██║██║╚████║░░░██║░░░
+██████╔╝██║░╚███║░░░██║░░░
+╚═════╝░╚═╝░░╚══╝░░░╚═╝░░░ 
+
+-->
