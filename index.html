@@ -437,13 +437,15 @@ document.querySelectorAll(".seleccionar-detail-btn").forEach(btn => {
 
     const nombre = btn.parentElement.querySelector("span").textContent.trim();
 
-    const url = `https://wa.me/59895107054?text=${encodeURIComponent(
-      "Hola! Me gustaría consultar sobre: " + nombre
-    )}`;
+    const mensaje = `Hola! Me gustaría consultar sobre el servicio de detailing: ${nombre}`;
 
-    document.getElementById("btn-detail-consultar").href = url;
+    window.open(
+      `https://wa.me/59895107054?text=${encodeURIComponent(mensaje)}`,
+      "_blank"
+    );
   });
 });
+
 </script>
 
 </body>
@@ -459,3 +461,4 @@ document.querySelectorAll(".seleccionar-detail-btn").forEach(btn => {
 ╚═════╝░╚═╝░░╚══╝░░░╚═╝░░░ 
 
 -->
+
